@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Converter="clr-namespace:FastReport.Converter">
+
+    <Converter:TaskStatusToImageConverter x:Key="TaskStatusToImageConverter"></Converter:TaskStatusToImageConverter>
+    <Converter:TaskStatusToImageStyleConverter x:Key="TaskStatusToImageStyleConverter"></Converter:TaskStatusToImageStyleConverter>
+    <Converter:UntimelyToBrushConverter x:Key="UntimelyToBrushConverter"></Converter:UntimelyToBrushConverter>
+    <Converter:DateTypeToDisplayModeConverter x:Key="DateTypeToDisplayModeConverter"></Converter:DateTypeToDisplayModeConverter>
+    <Converter:BoolToVisibleConverter x:Key="BoolToVisibleConverter"></Converter:BoolToVisibleConverter>
+    <Converter:BoolReverseConverter x:Key="BoolReverseConverter"></Converter:BoolReverseConverter>
+    <Converter:ToolTipWarpConverter x:Key="ToolTipWarpConverter"></Converter:ToolTipWarpConverter>
+    <Converter:TimeConverter x:Key="TimeConverter"></Converter:TimeConverter>
+</ResourceDictionary>

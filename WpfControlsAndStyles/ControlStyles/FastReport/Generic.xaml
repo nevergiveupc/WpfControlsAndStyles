@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    >
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="BrushStyle.xaml"/>
+        <ResourceDictionary Source="ButtonStyle.xaml"/>
+        <ResourceDictionary Source="CalendarStyle.xaml"/>
+        <ResourceDictionary Source="CheckBoxStyle.xaml"/>
+        <ResourceDictionary Source="ErrorStyle.xaml"/>
+        <ResourceDictionary Source="ImageStyle.xaml"/>
+        <ResourceDictionary Source="ListBoxStyle.xaml"/>
+        <ResourceDictionary Source="RadioButtonStyle.xaml"/>
+        <ResourceDictionary Source="ScrollViewerStyle.xaml"/>
+        <ResourceDictionary Source="TreeViewStyle.xaml"/>
+        <ResourceDictionary Source="HeaderedItemsControl.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

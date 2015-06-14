@@ -1,0 +1,11 @@
+<Modules>
+  <Module MenuName="样式库">
+    <Module  MenuName="默认样式" ClassName="Default">
+    </Module>
+    <Module  MenuName="FastConfig样式" ClassName="FastConfig">
+    </Module>
+    <Module MenuName="FastReport样式"  ClassName="FastReport">
+      </Module>
+  </Module>
+
+</Modules>

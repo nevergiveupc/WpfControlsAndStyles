@@ -1,0 +1,257 @@
+﻿<Window x:Class="WpfControlsAndStylesDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+        Title="{DynamicResource 0005 }" Width="710" Height="600">
+    <WrapPanel Margin="10" x:Name="WrapPanel">
+        <HeaderedItemsControl Header="Button" Width="110" Height="250">
+            <Button Margin="5" Content="ButtonStyle1" Style="{DynamicResource ButtonStyle1}" Width="80" Height="25"/>
+            <Button Margin="5" Content="ButtonStyle2" Style="{DynamicResource ButtonStyle2}" Width="80" Height="25"/>
+            <Button Margin="5" Content="ButtonStyle3" Style="{DynamicResource ButtonStyle3}" Width="80" Height="25"/>
+            <Button Margin="5" Content="ButtonStyle4" Style="{DynamicResource ButtonStyle4}" Width="80" Height="25"/>
+            <Button Margin="5" Content="ButtonStyle5" Style="{DynamicResource ButtonStyle5}" Width="80" Height="25"/>
+            <Button Margin="5" Content="ButtonStyle6" Style="{DynamicResource ButtonStyle6}" Width="80" Height="25"/>
+            <!--<ToggleButton Margin="5" Content="ToggleButton"/>
+            <RepeatButton Margin="5" Content="RepeatButton"/>-->
+        </HeaderedItemsControl>
+        <HeaderedItemsControl Header="TextBox" Width="110" Height="250">
+            <TextBox  Margin="5" Text="TextBoxStyle1" Style="{DynamicResource TextBoxStyle1}"/>
+            <TextBox  Margin="5" Text="TextBoxStyle2" Style="{DynamicResource TextBoxStyle2}"/>
+            <TextBox Margin="5" Text="TextBoxStyle3" Style="{DynamicResource TextBoxStyle3}"/>
+            <TextBox Margin="5" Text="TextBoxStyle4" Style="{DynamicResource TextBoxStyle4}"/>
+            <TextBox Margin="5" Text="TextBoxStyle5" Style="{DynamicResource TextBoxStyle5}"/>
+            <TextBox Margin="5" Text="TextBoxStyle6" Style="{DynamicResource TextBoxStyle6}"/>
+        </HeaderedItemsControl>
+        <HeaderedItemsControl Header="ComboBox" Width="130" Height="250">
+            <ComboBox Margin="5" IsEditable="True" VerticalContentAlignment="Center" Style="{DynamicResource ComboBoxStyle1}">
+                <ComboBox.Items>
+                    <ComboBoxItem Content="ComboBoxStyle1"/>
+                    <ComboBoxItem Content="ComboBoxStyle1"/>
+                    <ComboBoxItem Content="ComboBoxStyle1"/>
+                    <ComboBoxItem Content="ComboBoxStyle1"/>
+                    <ComboBoxItem Content="ComboBoxStyle1"/>
+                    <ComboBoxItem Content="ComboBoxStyle1"/>
+                    <ComboBoxItem Content="ComboBoxStyle1"/>
+                </ComboBox.Items>
+            </ComboBox>
+            <ComboBox Margin="5" IsEditable="True" VerticalContentAlignment="Center" Style="{DynamicResource ComboBoxStyle2}">
+                <ComboBox.Items>
+                    <ComboBoxItem Content="ComboBoxStyle2"/>
+                    <ComboBoxItem Content="ComboBoxStyle2"/>
+                    <ComboBoxItem Content="ComboBoxStyle2"/>
+                    <ComboBoxItem Content="ComboBoxStyle2"/>
+                    <ComboBoxItem Content="ComboBoxStyle2"/>
+                    <ComboBoxItem Content="ComboBoxStyle2"/>
+                    <ComboBoxItem Content="ComboBoxStyle2"/>
+                </ComboBox.Items>
+            </ComboBox>
+            <ComboBox Margin="5" IsEditable="True" VerticalContentAlignment="Center" Style="{DynamicResource ComboBoxStyle3}">
+                <ComboBox.Items>
+                    <ComboBoxItem Content="ComboBoxStyle3"/>
+                    <ComboBoxItem Content="ComboBoxStyle3"/>
+                    <ComboBoxItem Content="ComboBoxStyle3"/>
+                    <ComboBoxItem Content="ComboBoxStyle3"/>
+                    <ComboBoxItem Content="ComboBoxStyle3"/>
+                    <ComboBoxItem Content="ComboBoxStyle3"/>
+                    <ComboBoxItem Content="ComboBoxStyle3"/>
+                </ComboBox.Items>
+            </ComboBox>
+            <ComboBox Margin="5" IsEditable="True" VerticalContentAlignment="Center" Style="{DynamicResource ComboBoxStyle4}">
+                <ComboBox.Items>
+                    <ComboBoxItem Content="ComboBoxStyle4"/>
+                    <ComboBoxItem Content="ComboBoxStyle4"/>
+                    <ComboBoxItem Content="ComboBoxStyle4"/>
+                    <ComboBoxItem Content="ComboBoxStyle4"/>
+                    <ComboBoxItem Content="ComboBoxStyle4"/>
+                    <ComboBoxItem Content="ComboBoxStyle4"/>
+                    <ComboBoxItem Content="ComboBoxStyle4"/>
+                </ComboBox.Items>
+            </ComboBox>
+            <ComboBox Margin="5" IsEditable="True" VerticalContentAlignment="Center" Style="{DynamicResource ComboBoxStyle5}">
+                <ComboBox.Items>
+                    <ComboBoxItem Content="ComboBoxStyle5"/>
+                    <ComboBoxItem Content="ComboBoxStyle5"/>
+                    <ComboBoxItem Content="ComboBoxStyle5"/>
+                    <ComboBoxItem Content="ComboBoxStyle5"/>
+                    <ComboBoxItem Content="ComboBoxStyle5"/>
+                    <ComboBoxItem Content="ComboBoxStyle5"/>
+                    <ComboBoxItem Content="ComboBoxStyle5"/>
+                </ComboBox.Items>
+            </ComboBox>
+            <ComboBox Margin="5" IsEditable="True" VerticalContentAlignment="Center" Style="{DynamicResource ComboBoxStyle6}">
+                <ComboBox.Items>
+                    <ComboBoxItem Content="ComboBoxStyle6"/>
+                    <ComboBoxItem Content="ComboBoxStyle6"/>
+                    <ComboBoxItem Content="ComboBoxStyle6"/>
+                    <ComboBoxItem Content="ComboBoxStyle6"/>
+                    <ComboBoxItem Content="ComboBoxStyle6"/>
+                    <ComboBoxItem Content="ComboBoxStyle6"/>
+                    <ComboBoxItem Content="ComboBoxStyle6"/>
+                </ComboBox.Items>
+            </ComboBox>
+        </HeaderedItemsControl>
+        <HeaderedItemsControl Header="CheckBox" Width="120" Height="250">
+            <CheckBox Content="CheckBoxStyle1" HorizontalAlignment="Center" IsChecked="True" Style="{DynamicResource CheckBoxStyle1}" Margin="0,5,0,0"/>
+            <CheckBox Content="CheckBoxStyle2" HorizontalAlignment="Center" Style="{DynamicResource CheckBoxStyle2}" Margin="0,5,0,0"/>
+            <CheckBox Content="CheckBoxStyle3" HorizontalAlignment="Center" Style="{DynamicResource CheckBoxStyle3}" Margin="0,5,0,0"/>
+            <CheckBox Content="CheckBoxStyle4" HorizontalAlignment="Center" Style="{DynamicResource CheckBoxStyle4}" Margin="0,5,0,0"/>
+            <CheckBox Content="CheckBoxStyle5" HorizontalAlignment="Center" Style="{DynamicResource CheckBoxStyle5}" Margin="0,5,0,0"/>
+            <CheckBox Content="CheckBoxStyle6" HorizontalAlignment="Center" Style="{DynamicResource CheckBoxStyle6}" Margin="0,5,0,0"/>
+        </HeaderedItemsControl>
+        <HeaderedItemsControl Header="RadioButton" Width="140" Height="250">
+            <RadioButton Content="RadioButtonStyle1" HorizontalAlignment="Center" IsChecked="True" Style="{DynamicResource RadioButtonStyle1}" Margin="0,5,0,0"  Width="120" Height="30"/>
+            <RadioButton Content="RadioButtonStyle2" HorizontalAlignment="Center" Style="{DynamicResource RadioButtonStyle2}" Margin="0,5,0,0"  Width="120" Height="30"/>
+            <RadioButton Content="RadioButtonStyle3" HorizontalAlignment="Center" Style="{DynamicResource RadioButtonStyle3}" Margin="0,5,0,0"  Width="120" Height="30"/>
+            <RadioButton Content="RadioButtonStyle4" HorizontalAlignment="Center" Style="{DynamicResource RadioButtonStyle4}" Margin="0,5,0,0" Width="120" Height="30"/>
+            <RadioButton Content="RadioButtonStyle5" HorizontalAlignment="Center" Style="{DynamicResource RadioButtonStyle5}" Margin="0,5,0,0" Width="120" Height="30"/>
+            <RadioButton Content="RadioButtonStyle6" HorizontalAlignment="Center" Style="{DynamicResource RadioButtonStyle6}" Margin="0,5,0,0" Width="120" Height="30"/>
+        </HeaderedItemsControl>
+
+        <HeaderedItemsControl Header="ListBox" Width="180" Height="200">
+            <ListBox Height="50" Width="150" Style="{DynamicResource ListBoxStyle1}" Margin="0,10,0,0">
+                <ListBoxItem Content="ListBoxStyle1" Style="{DynamicResource ListBoxItemStyle1}"/>
+                <ListBoxItem Content="ListBoxStyle1" Style="{DynamicResource ListBoxItemStyle1}"/>
+                <ListBoxItem Content="ListBoxStyle1" Style="{DynamicResource ListBoxItemStyle1}"/>
+            </ListBox>
+            <ListBox Height="50" Width="150" Style="{DynamicResource ListBoxStyle2}" Margin="0,10,0,0">
+                <ListBoxItem Content="ListBoxStyle2" Style="{DynamicResource ListBoxItemStyle2}"/>
+                <ListBoxItem Content="ListBoxStyle2" Style="{DynamicResource ListBoxItemStyle2}"/>
+                <ListBoxItem Content="ListBoxStyle2" Style="{DynamicResource ListBoxItemStyle2}"/>
+            </ListBox>
+            <ListBox Height="50" Width="150" Style="{DynamicResource ListBoxStyle3}" Margin="0,10,0,0">
+                <ListBoxItem Content="ListBoxStyle3" Style="{DynamicResource ListBoxItemStyle3}"/>
+                <ListBoxItem Content="ListBoxStyle3" Style="{DynamicResource ListBoxItemStyle3}"/>
+                <ListBoxItem Content="ListBoxStyle3" Style="{DynamicResource ListBoxItemStyle3}"/>
+            </ListBox>
+        </HeaderedItemsControl>
+        <HeaderedItemsControl Header="ListView" Width="250" Height="200">
+            <ListView Margin="8" Height="100" Width="200" Style="{DynamicResource ListViewStyle1}">
+                <ListView.View>
+                    <GridView AllowsColumnReorder="true">
+                        <GridViewColumn DisplayMemberBinding="{Binding}" Header="Content" Width="120"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Length}" Header="Length" Width="100"/>
+                    </GridView>
+                </ListView.View>
+                <ListViewItem Content="ListViewStyle1"  Style="{DynamicResource ListViewItemStyle1}"/>
+                <ListViewItem Content="ListViewStyle1"  Style="{DynamicResource ListViewItemStyle1}"/>
+                <ListViewItem Content="ListViewStyle1"  Style="{DynamicResource ListViewItemStyle1}"/>
+                <ListViewItem Content="ListViewStyle1"  Style="{DynamicResource ListViewItemStyle1}"/>
+                <ListViewItem Content="ListViewStyle1"  Style="{DynamicResource ListViewItemStyle1}"/>
+                <ListViewItem Content="ListViewStyle1"  Style="{DynamicResource ListViewItemStyle1}"/>
+                <ListViewItem Content="ListViewStyle1"  Style="{DynamicResource ListViewItemStyle1}"/>
+                <ListViewItem Content="ListViewStyle1"  Style="{DynamicResource ListViewItemStyle1}"/>
+            </ListView>
+        </HeaderedItemsControl>
+
+        <HeaderedItemsControl Header="TreeView" Width="200" Height="200">
+            <TreeView Style="{DynamicResource TreeViewStyle1}">
+                <TreeViewItem Header="{DynamicResource 0117 }" Style="{DynamicResource TreeViewItemStyle1}">
+                    <TreeViewItem Header="{DynamicResource 0119 }"/>
+                    <TreeViewItem Header="{DynamicResource 0120 }"/>
+                </TreeViewItem>
+                <TreeViewItem Header="{DynamicResource 0121 }" Style="{DynamicResource TreeViewItemStyle1}">
+                    <TreeViewItem Header="{DynamicResource 0122 }"/>
+                    <TreeViewItem Header="{DynamicResource 0123 }"/>
+                </TreeViewItem>
+            </TreeView>
+        </HeaderedItemsControl>
+        <HeaderedItemsControl Header="Slider" Width="160" Height="200">
+            <StackPanel Height="160">
+                <Slider Margin="5" Orientation="Horizontal" Style="{DynamicResource SliderStyle1}" SelectionStart="2" SelectionEnd="7" IsSelectionRangeEnabled="True" />
+                <Slider Margin="5" Orientation="Horizontal" Style="{DynamicResource SliderStyle2}" IsSnapToTickEnabled="True" TickPlacement="Both"  Maximum="10" Value="3" IsSelectionRangeEnabled="True" SelectionStart="2" SelectionEnd="7"/>
+                <Slider Margin="5" Orientation="Horizontal" Style="{DynamicResource SliderStyle3}" IsSnapToTickEnabled="True" TickPlacement="BottomRight"  Maximum="10" Value="3" IsSelectionRangeEnabled="True" SelectionStart="2" SelectionEnd="7"/>
+                <Slider Margin="5" Orientation="Horizontal" Style="{DynamicResource SliderStyle4}" IsSnapToTickEnabled="True" TickPlacement="TopLeft"  Maximum="10" Value="3" IsSelectionRangeEnabled="True" SelectionStart="2" SelectionEnd="7"/>
+            </StackPanel>
+        </HeaderedItemsControl>
+
+        <HeaderedItemsControl Header="GroupBox" Width="210" Height="200">
+            <GroupBox Header="{DynamicResource 0139 }" Height="160" Style="{DynamicResource GroupBoxStyle1}">
+                <Border Background="LightCyan"></Border>
+            </GroupBox>
+        </HeaderedItemsControl>
+        <HeaderedItemsControl Header="ContextMenu" Width="260" Height="200">
+            <TabControl Height="160" Style="{DynamicResource TabControlStyle1}">
+                <TabItem Header="ContextMenu" Style="{DynamicResource TabItemStyle1}">
+                    <Border Background="#FFAED7FF" >
+                        <Border.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="{DynamicResource 0147 }"/>
+                                <MenuItem Header="{DynamicResource 0148 }"/>
+                                <MenuItem Header="{DynamicResource 0149 }"/>
+                            </ContextMenu>
+                        </Border.ContextMenu>
+                    </Border>
+                </TabItem>
+                <TabItem Header="Expander" Style="{DynamicResource TabItemStyle1}">
+                    <Expander Header="{DynamicResource 0151 }" Style="{DynamicResource ExpanderStyle1}">
+                        <Border Background="LightCyan"></Border>
+                    </Expander>
+                </TabItem>
+            </TabControl>
+        </HeaderedItemsControl>
+
+        <HeaderedItemsControl Header="ProgressBar" Height="50" Width="650">
+            <ProgressBar Maximum="100" Value="33" Style="{DynamicResource ProgressBarStyle1}" Height="40"/>
+        </HeaderedItemsControl>
+
+        <HeaderedItemsControl Header="DataGrid" Height="150" Width="250">
+            <DataGrid Name="dataGrid" AutoGenerateColumns="False" Height="120" Width="200" Style="{DynamicResource DataGridStyle1}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Width="50" Binding="{Binding Path=Id}"/>
+                    <DataGridTextColumn Header="{DynamicResource 0164 }" Width="100" Binding="{Binding Path=Name}"/>
+                    <DataGridTemplateColumn Header="{DynamicResource 0166 }" Width="50">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Width="50" Text="{Binding Gender.SexDescription}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <ComboBox IsEditable="False" Width="50" ItemsSource="{Binding Genderlist}" DisplayMemberPath="SexDescription" SelectedValue="{Binding Gender}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="{DynamicResource 0171 }" Width="50" Binding="{Binding Path=Age}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </HeaderedItemsControl>
+        <HeaderedItemsControl Header="ToolBar" Width="390" Height="150">
+            <ToolBarTray>
+                <ToolBar Style="{DynamicResource ToolBarStyle1}">
+                    <TextBlock Text="{DynamicResource 0176 }"/>
+                    <ComboBox Width="100">
+                        <ComboBoxItem Content="{DynamicResource 0177 }"/>
+                        <ComboBoxItem Content="{DynamicResource 0177 }"/>
+                    </ComboBox>
+                    <Separator/>
+                    <Button Content="{DynamicResource 0178 }"/>
+                    <Button Content="{DynamicResource 0178 }"/>
+                    <Separator/>
+                    <CheckBox Content="{DynamicResource 0179 }"/>
+                    <CheckBox Content="{DynamicResource 0179 }"/>
+                    <Separator/>
+                    <RadioButton Content="{DynamicResource 0180 }"/>
+                    <RadioButton Content="{DynamicResource 0180 }"/>
+                    <RadioButton Content="{DynamicResource 0180 }"/>
+                </ToolBar>
+                <ToolBar Width="300" Height="30" Band="1"  Style="{DynamicResource ToolBarStyle2}">
+                    <TextBlock Text="{DynamicResource 0176 }"/>
+                    <ComboBox Width="100">
+                        <ComboBoxItem Content="{DynamicResource 0177 }"/>
+                        <ComboBoxItem Content="{DynamicResource 0177 }"/>
+                    </ComboBox>
+                    <Separator/>
+                    <Button Content="{DynamicResource 0178 }"/>
+                    <Button Content="{DynamicResource 0178 }"/>
+                    <Separator/>
+                    <CheckBox Content="{DynamicResource 0179 }"/>
+                    <CheckBox Content="{DynamicResource 0179 }"/>
+                    <Separator/>
+                    <RadioButton Content="{DynamicResource 0180 }"/>
+                    <RadioButton Content="{DynamicResource 0180 }"/>
+                    <RadioButton Content="{DynamicResource 0180 }"/>
+                </ToolBar>
+            </ToolBarTray>
+        </HeaderedItemsControl>
+    </WrapPanel>
+</Window>

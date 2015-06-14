@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--字体背景色  灰色-->
+	<SolidColorBrush x:Key="ForegroundStyle" Color="#FF65696B"/>
+
+    <Style TargetType="{x:Type TextBox}" x:Key="TextBoxStyle">
+        <Setter Property="Foreground" Value="{StaticResource ResourceKey=ForegroundStyle}"/>
+    </Style>
+    
+    <Style TargetType="{x:Type TextBlock}" x:Key="TextBlockStyle">
+        <Setter Property="Foreground" Value="{StaticResource ResourceKey=ForegroundStyle}"/>
+    </Style>
+
+    <Style TargetType="{x:Type ComboBox}">
+        <Setter Property="Foreground" Value="{StaticResource ResourceKey=ForegroundStyle}"/>
+    </Style>
+
+</ResourceDictionary>

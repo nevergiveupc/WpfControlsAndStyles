@@ -1,0 +1,751 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--Used In MainWindow View-->
+     <Style x:Key="MinButton" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="缩小_Copy">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="缩小_Copy1">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="缩小">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="缩小_Copy1">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="缩小">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="缩小_Copy">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Path x:Name="缩小" Data="M667,90 L689,90" Stretch="Fill" Stroke="White" StrokeThickness="2">
+                            <Path.Effect>
+                                <DropShadowEffect Color="#FF2C6EB1" BlurRadius="2" ShadowDepth="1" Opacity="0.5"/>
+                            </Path.Effect>
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF478ACE" Offset="0"/>
+                                    <GradientStop Color="#FF6FA2D1" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="缩小_Copy" Data="M667,90 L689,90" Stretch="Fill" Stroke="#FF2070BA" StrokeThickness="2">
+                            <Path.Effect>
+                                <DropShadowEffect Color="#FF2C6EB1" BlurRadius="2" ShadowDepth="1" Opacity="0.5"/>
+                            </Path.Effect>
+                        </Path>
+                        <Path x:Name="缩小_Copy1" Data="M667,90 L689,90" Stretch="Fill" Stroke="#FF0A4276" StrokeThickness="2">
+                            <Path.Effect>
+                                <DropShadowEffect Color="#FF2C6EB1" BlurRadius="2" ShadowDepth="1" Opacity="0.5"/>
+                            </Path.Effect>
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF478ACE" Offset="0"/>
+                                    <GradientStop Color="#FF6FA2D1" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Rectangle Margin="0,-10,0,-10" Fill="White" Opacity="0"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Focusable" Value="False"/>
+    </Style>  
+
+    <Style x:Key="MaxButton" TargetType="{x:Type Button}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Grid x:Name="全屏">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Normal">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="移动">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="点击">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="MouseOver">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="正常">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="点击">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+										</ObjectAnimationUsingKeyFrames>                                      
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Pressed">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="正常">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="移动">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+										</ObjectAnimationUsingKeyFrames>                                       
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Disabled"/>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Grid x:Name="正常" Height="16">
+							<Rectangle Margin="4,0.002,0,2.998" Stroke="White" StrokeThickness="2" Height="13" Fill="{x:Null}" Opacity="0.7" >
+								<Rectangle.Effect>
+									<DropShadowEffect Color="#FF2C6FB2" BlurRadius="2" ShadowDepth="1" Opacity="0.5"/>
+								</Rectangle.Effect>
+							</Rectangle>
+							<Rectangle Margin="0,3.616,4,-0.616" Stroke="White" StrokeThickness="2" Height="13" Fill="{x:Null}" >
+								<Rectangle.Effect>
+									<DropShadowEffect Color="#FF2C6FB2" BlurRadius="2" ShadowDepth="1" Opacity="0.5"/>
+								</Rectangle.Effect>
+							</Rectangle>
+						</Grid>
+						<Grid x:Name="移动" Height="16">
+							<Rectangle Margin="4,0.002,0,2.998" Stroke="#FF2070BA" StrokeThickness="2" Height="13" Fill="{x:Null}" >
+								<Rectangle.Effect>
+									<DropShadowEffect Color="#FF2C6FB2" BlurRadius="2" ShadowDepth="1" Opacity="0.5"/>
+								</Rectangle.Effect>
+							</Rectangle>
+							<Rectangle Margin="0,3.616,4,-0.616" Stroke="#FF2070BA" StrokeThickness="2" Height="13" Fill="{x:Null}" >
+								<Rectangle.Effect>
+									<DropShadowEffect Color="#FF2C6FB2" BlurRadius="2" ShadowDepth="1" Opacity="0.5"/>
+								</Rectangle.Effect>
+							</Rectangle>
+						</Grid>
+						<Grid x:Name="点击" Height="16" >
+							<Rectangle Margin="4,0.002,0,2.998" Stroke="#FF0A4276" StrokeThickness="2" Height="13" Fill="{x:Null}" >
+								<Rectangle.Effect>
+									<DropShadowEffect Color="#FF2C6FB2" BlurRadius="2" ShadowDepth="1" Opacity="0.5"/>
+								</Rectangle.Effect>
+							</Rectangle>
+							<Rectangle Margin="0,3.616,4,-0.616" Stroke="#FF0A4276" StrokeThickness="2" Height="13" Fill="{x:Null}" >
+								<Rectangle.Effect>
+									<DropShadowEffect Color="#FF2C6FB2" BlurRadius="2" ShadowDepth="1" Opacity="0.5"/>
+								</Rectangle.Effect>
+							</Rectangle>
+						</Grid>
+                        
+						<Rectangle Margin="0,-10,0,-10" Fill="White" Opacity="0"/>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Focusable" Value="False"/>
+	</Style>
+
+    <Style x:Key="CloseButton" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="移动">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="点击">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="正常">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="点击">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="正常">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="移动">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Path x:Name="正常" Data="M1,1.042 L14,14 M14,1 L1,14" Stretch="Fill" Stroke="White" StrokeThickness="2" Height="15">
+                            <Path.Effect>
+                                <DropShadowEffect Color="#FF2C6FB2" BlurRadius="2" ShadowDepth="1" Opacity="0.5"/>
+                            </Path.Effect>
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF478ACE" Offset="0"/>
+                                    <GradientStop Color="#FF6FA2D1" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="移动" Data="M1,1.042 L14,14 M14,1 L1,14" Stretch="Fill" Stroke="#FF2070BA" StrokeThickness="2" Height="15">
+                            <Path.Effect>
+                                <DropShadowEffect Color="#FF2C6FB2" BlurRadius="2" ShadowDepth="1" Opacity="0.5"/>
+                            </Path.Effect>
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF478ACE" Offset="0"/>
+                                    <GradientStop Color="#FF6FA2D1" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="点击" Data="M1,1.042 L14,14 M14,1 L1,14" Stretch="Fill" Stroke="#FF0A4276" StrokeThickness="2" Height="15" >
+                            <Path.Effect>
+                                <DropShadowEffect Color="#FF2C6FB2" BlurRadius="2" ShadowDepth="1" Opacity="0.5"/>
+                            </Path.Effect>
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF478ACE" Offset="0"/>
+                                    <GradientStop Color="#FF6FA2D1" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Rectangle Margin="0,-10,0,-10" Fill="White" Opacity="0"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Focusable" Value="False"/>
+    </Style>
+
+    
+    <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Color" Storyboard.TargetName="BStroke">
+                                            <EasingColorKeyFrame KeyTime="0" Value="#FFF08100"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Color" Storyboard.TargetName="BStroke">
+                                            <EasingColorKeyFrame KeyTime="0" Value="#FFF08100"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Color" Storyboard.TargetName="BFill">
+                                            <EasingColorKeyFrame KeyTime="0" Value="#FFFFDAAE"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle RadiusY="1" RadiusX="1" Width="{TemplateBinding Width}">
+                            <Rectangle.Stroke>
+                                <SolidColorBrush x:Name="BStroke" Color="#FFDFE4ED"></SolidColorBrush>
+                            </Rectangle.Stroke>
+                            <Rectangle.Fill>
+                                <SolidColorBrush x:Name="BFill" Color="White"></SolidColorBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Content="{TemplateBinding Content}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="#FFF08100"/>
+    </Style>
+
+    <!--<Style x:Key="ButtonStyle3" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="rectangle">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="rectangle">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="contentPresenter">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle x:Name="rectangle" Fill="Black" StrokeThickness="0" Height="20" VerticalAlignment="Bottom" Opacity="0"/>
+                        <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Stretch" Height="Auto" Margin="12,4" VerticalAlignment="Stretch" Width="Auto"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+
+    <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="mouseOverRectangle">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pressedRectangle">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="normalRectangle">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="contentPresenter">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle x:Name="normalRectangle" Stroke="#FFC2CAD8" Fill="White" Height="{TemplateBinding Height}" RadiusY="3" RadiusX="3"></Rectangle>
+                        <Rectangle x:Name="mouseOverRectangle" Stroke="#FF2686F1" Fill="White" Height="{TemplateBinding Height}" RadiusY="3" RadiusX="3" Opacity="0"/>
+                        <Rectangle x:Name="pressedRectangle" Stroke="#FF2686F1" Height="{TemplateBinding Height}" RadiusY="3" RadiusX="3"  Opacity="0">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF2686F1" Offset="0"/>
+                                    <GradientStop Color="#FF5AA2F1" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <ContentPresenter x:Name="contentPresenter"  VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="#FF92969D"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="#FF2686F1"></Setter>
+            </Trigger>
+            <Trigger Property="IsPressed"  Value="True">
+                <Setter Property="Foreground" Value="White"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonStyle3" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="MouseOverRectangle">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PressedRectangle">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NormalRectangle">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ContentPresenter">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle x:Name="NormalRectangle" Fill="#FFF08100" Width="{TemplateBinding Width}"  RadiusY="3" RadiusX="3" Stroke="#FFF08100"/>
+                        <Rectangle x:Name="MouseOverRectangle" Fill="#FFFB9724" Width="{TemplateBinding Width}" RadiusY="3" RadiusX="3" Stroke="#FFF08100" Opacity="0"/>
+                        <Rectangle x:Name="PressedRectangle" Fill="#FFDC7600" Width="{TemplateBinding Width}" RadiusY="3" RadiusX="3" Stroke="#FFF08100" Opacity="0"/>
+                        <ContentPresenter x:Name="ContentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Key="ButtonStyle4" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="MouseOverRectangle">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PressedRectangle">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NormalRectangle">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ContentPresenter">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle x:Name="NormalRectangle" Fill="#FFF04200" Width="{TemplateBinding Width}"  RadiusY="3" RadiusX="3" Stroke="#FFD00202"/>
+                        <Rectangle x:Name="MouseOverRectangle" Fill="#FFFF634A" Width="{TemplateBinding Width}" RadiusY="3" RadiusX="3" Stroke="#FFD00202" Opacity="0"/>
+                        <Rectangle x:Name="PressedRectangle" Fill="#FFC03030" Width="{TemplateBinding Width}" RadiusY="3" RadiusX="3" Stroke="#FFD00202" Opacity="0"/>
+                        <ContentPresenter x:Name="ContentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <!--Used In TemplateManage View-->
+    <Style x:Key="ButtonStyle5" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="mouseOverRectangle">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pressedRectangle">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="contentPresenter">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle x:Name="normalRectangle" Stroke="#FFF08100" Fill="#FFF6F8FB" Height="{TemplateBinding Height}" RadiusX="3" RadiusY="3" />
+                        <Rectangle x:Name="mouseOverRectangle" Stroke="#FFF08100" Fill="#FFFFF1E2" Height="{TemplateBinding Height}" RadiusX="3" RadiusY="3" Opacity="0"/>
+                        <Rectangle x:Name="pressedRectangle" Stroke="#FFF08100" Fill="#FFFCD3A5" Height="{TemplateBinding Height}" RadiusX="3" RadiusY="3" Opacity="0"/>
+                        <ContentPresenter x:Name="contentPresenter" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="#FFF08100"/>
+    </Style>
+
+    <Style x:Key="ButtonStyle6" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="MouseOverRectangle">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PressedRectangle">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ContentPresenter">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle x:Name="NormalRectangle" Stroke="#FFF08100" Fill="#FFF08100" Height="32" RadiusX="3" RadiusY="3" />
+                        <Rectangle x:Name="MouseOverRectangle" Stroke="#FFF08100" Fill="#FFFB9724" Height="32" RadiusX="3" RadiusY="3" Opacity="0"/>
+                        <Rectangle x:Name="PressedRectangle" Stroke="#FFF08100" Fill="#FFDC7600" Height="32" RadiusX="3" RadiusY="3" Opacity="0" />
+                        <ContentPresenter x:Name="ContentPresenter"  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Key="ButtonStyle9" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="border">
+                                            <EasingColorKeyFrame KeyTime="0" Value="#FF24D4F5"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="border">
+                                            <EasingColorKeyFrame KeyTime="0" Value="#FF24D4F5"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="border">
+                                            <EasingColorKeyFrame KeyTime="0" Value="#FFDFF6D3"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="contentPresenter">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle x:Name="border" Fill="White" Stroke="#FFC2CAD8"/>
+                        <ContentPresenter x:Name="contentPresenter"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle10" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="返回按钮">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition From="Normal" GeneratedDuration="0:0:0.5" To="MouseOver">
+                                        <VisualTransition.GeneratedEasingFunction>
+                                            <QuinticEase EasingMode="EaseOut"/>
+                                        </VisualTransition.GeneratedEasingFunction>
+                                    </VisualTransition>
+                                    <VisualTransition From="MouseOver" GeneratedDuration="0:0:0.5" To="Normal">
+                                        <VisualTransition.GeneratedEasingFunction>
+                                            <QuinticEase EasingMode="EaseOut"/>
+                                        </VisualTransition.GeneratedEasingFunction>
+                                    </VisualTransition>
+                                    <VisualTransition From="MouseOver" GeneratedDuration="0:0:0.2" To="Pressed"/>
+                                    <VisualTransition From="Pressed" GeneratedDuration="0:0:0.2" To="MouseOver"/>
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="-19.25"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path1">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="-22.25"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="-19.25"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path1">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="-22.25"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse">
+                                            <EasingColorKeyFrame KeyTime="0" Value="#FFB3E8FF"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ellipse">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="path">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="path1">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="contentPresenter">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="按钮区" HorizontalAlignment="Left" Margin="0,0.002,0,0" Width="24" Clip="M23,12 C23,18.075132 18.075132,23 12,23 C5.9248678,23 1,18.075132 1,12 C1,5.9248678 5.9248678,1 12,1 C18.075132,1 23,5.9248678 23,12 z">
+                            <Ellipse x:Name="ellipse" Width="Auto" Fill="#FFF6F8FB" Stroke="#FF3372DA" StrokeThickness="3" HorizontalAlignment="Stretch" Margin="0"/>
+                            <Path x:Name="path" Data="M1.4142135,0 L1.4455288,0.031315275 10.148201,0.031315275 10.148201,2.0313153 3.4455288,2.0313153 11.048544,9.6343303 9.6343296,11.048543 2.040154,3.4543676 2.040154,9.8963246 0.040154099,9.8963246 0.040154099,1.4543677 0,1.4142136 0.040154099,1.3740595 0.040154099,0.058324656 0.30920114,0.058324656 0.30920114,0.031315275 1.3828982,0.031315275 z" Fill="#FF3372DA" RenderTransformOrigin="0.473247985901973,0.0933440060033513" Stretch="Fill" StrokeThickness="2" Width="Auto" HorizontalAlignment="Stretch" Margin="3.417,8,9.535,4.952">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-45"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                            <Path x:Name="path1" Data="M1.4142135,0 L1.4455288,0.031315275 10.148201,0.031315275 10.148201,2.0313153 3.4455288,2.0313153 11.048544,9.6343303 9.6343296,11.048543 2.040154,3.4543676 2.040154,9.8963246 0.040154099,9.8963246 0.040154099,1.4543677 0,1.4142136 0.040154099,1.3740595 0.040154099,0.058324656 0.30920114,0.058324656 0.30920114,0.031315275 1.3828982,0.031315275 z" Fill="#FF3372DA" RenderTransformOrigin="0.473247985901973,0.0933440060033513" Stretch="Fill" StrokeThickness="2" Width="11.048" HorizontalAlignment="Right" Margin="0,8,-12.965,4.952">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-45"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Grid>
+                        <ContentPresenter x:Name="contentPresenter" Margin="28,0,0,2.885" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="#FF3372DA"/>
+    </Style>
+
+    <!--Used in TimeSet-->
+    <Style x:Key="ButtonStyle11" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid Height="32">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Color" Storyboard.TargetName="commonFill">
+                                            <EasingColorKeyFrame KeyTime="0" Value="#FFFFF1E2"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Color" Storyboard.TargetName="commonFill">
+                                            <EasingColorKeyFrame KeyTime="0" Value="#FFFCD3A5"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="commonRect">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="contentPresenter">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle x:Name="commonRect" Stroke="#FFF08100" RadiusX="3" RadiusY="3" >
+                            <Rectangle.Fill>
+                                <SolidColorBrush x:Name="commonFill"  Color="White"></SolidColorBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <ContentPresenter x:Name="contentPresenter" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="#FFF08100"/>
+    </Style>
+
+</ResourceDictionary>

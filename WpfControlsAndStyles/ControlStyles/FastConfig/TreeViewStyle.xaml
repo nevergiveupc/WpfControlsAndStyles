@@ -1,0 +1,107 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    >
+    <!--TreeView的数据模板-->
+    <HierarchicalDataTemplate x:Key="dtTreeViewImage" ItemsSource="{Binding }">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="{Binding TreeNodeImage}" Height="17" Width="22"/>
+            <TextBlock Text="{Binding TreeNodeName}"  Foreground="#FF65696B" />
+        </StackPanel>
+    </HierarchicalDataTemplate>
+
+    <HierarchicalDataTemplate x:Key="dtTreeViewCheckBox" >
+            <CheckBox  IsChecked="{Binding IsTreeNodeChecked}"  Foreground="#FF65696B">
+            <TextBlock Text="{Binding TreeNodeName}"/>
+        </CheckBox>
+    </HierarchicalDataTemplate>
+
+    <HierarchicalDataTemplate x:Key="dtTreeViewSyncChannel" >
+        <TextBlock Text="{Binding Name}"  Foreground="#FF65696B" />
+    </HierarchicalDataTemplate>
+
+    <Style x:Key="ExpandCollapseToggleStyle" TargetType="{x:Type ToggleButton}">
+		<Setter Property="Focusable" Value="False"/>
+		<Setter Property="Width" Value="19"/>
+		<Setter Property="Height" Value="13"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ToggleButton}">
+					<Border Background="Transparent" Height="13" Width="19">
+						<Border BorderBrush="#FF7898B5" BorderThickness="1" CornerRadius="1" Height="9" SnapsToDevicePixels="true" Width="9">
+							<Border.Background>
+								<LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+									<GradientStop Color="White" Offset=".2"/>
+									<GradientStop Color="#FFC0B7A6" Offset="1"/>
+								</LinearGradientBrush>
+							</Border.Background>
+							<Path x:Name="ExpandPath" Data="M 0 2 L 0 3 L 2 3 L 2 5 L 3 5 L 3 3 L 5 3 L 5 2 L 3 2 L 3 0 L 2 0 L 2 2 Z" Fill="Black" Margin="1,1,1,1"/>
+						</Border>
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsChecked" Value="True">
+							<Setter Property="Data" TargetName="ExpandPath" Value="M 0 2 L 0 3 L 5 3 L 5 2 Z"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+    
+    <!--绑定选定状态-->
+    <Style x:Key="TreeViewItemStyle1" TargetType="TreeViewItem">
+        <Setter Property="IsSelected"  Value="{Binding IsSelected, Mode=TwoWay}" />
+        <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type TreeViewItem}">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition MinWidth="19" Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition/>
+						</Grid.RowDefinitions>
+						<ToggleButton x:Name="Expander" ClickMode="Press" IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource ExpandCollapseToggleStyle}"/>
+						<Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.Column="1" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
+							<ContentPresenter x:Name="PART_Header" ContentSource="Header" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+						</Border>
+						<ItemsPresenter x:Name="ItemsHost" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsExpanded" Value="false">
+							<Setter Property="Visibility" TargetName="ItemsHost" Value="Collapsed"/>
+						</Trigger>
+						<Trigger Property="HasItems" Value="false">
+							<Setter Property="Visibility" TargetName="Expander" Value="Hidden"/>
+						</Trigger>
+						<Trigger Property="IsSelected" Value="true">
+							<Setter Property="Background" TargetName="Bd" Value="#FFDEE1E2"/>
+							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+						</Trigger>
+						<MultiTrigger>
+							<MultiTrigger.Conditions>
+								<Condition Property="IsSelected" Value="true"/>
+								<Condition Property="IsSelectionActive" Value="false"/>
+							</MultiTrigger.Conditions>
+							<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+						</MultiTrigger>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="FontWeight" Value="Bold" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>
